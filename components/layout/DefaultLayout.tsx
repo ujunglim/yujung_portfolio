@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
+import AppHeader from "./AppHeader";
 interface MyComponentProps {
   children: ReactNode;
 }

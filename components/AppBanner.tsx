@@ -1,6 +1,19 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { FiArrowDownCircle } from "react-icons/fi";
+import { FiGithub, FiGlobe } from "react-icons/fi";
+
+const socialLinks = [
+  {
+    id: 1,
+    icon: <FiGlobe />,
+    url: "https://ujunglim.tistory.com/",
+  },
+  {
+    id: 2,
+    icon: <FiGithub />,
+    url: "https://github.com/ujunglim",
+  },
+];
 
 function AppBanner() {
   return (
@@ -45,15 +58,33 @@ function AppBanner() {
           }}
           className="flex justify-center sm:block"
         >
-          <a
-            download="임유정 이력서.pdf"
-            href="/files/임유정_이력서.pdf"
-            className="font-general-medium flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
-            aria-label="Download Resume"
-          >
-            <FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
-            <span className="text-sm sm:text-lg duration-100">Download CV</span>
-          </a>
+          <div className="flex mt-12 mb-6">
+            <a
+              download="임유정 이력서.pdf"
+              href="/files/임유정_이력서.pdf"
+              className="font-general-medium flex justify-center items-center w-20 sm:w-36  sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+              aria-label="Resume"
+            >
+              <FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
+              <span className="text-sm sm:text-lg duration-100">이력서</span>
+            </a>
+            <div className="font-general-regular flex flex-col justify-center items-center ">
+              <ul className="flex">
+                {socialLinks.map((link) => (
+                  <a
+                    href={link.url}
+                    target="__blank"
+                    key={link.id}
+                    className="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-300"
+                  >
+                    <i className="text-xl sm:text-2xl md:text-3xl">
+                      {link.icon}
+                    </i>
+                  </a>
+                ))}
+              </ul>
+            </div>
+          </div>
         </motion.div>
       </div>
       <motion.div
