@@ -1,4 +1,4 @@
-import ProjectCard from "./ProjectCard";
+import ProjectSingle from "./ProjectSingle";
 import { projectsData } from "../data/projectsData";
 
 function Projects() {
@@ -8,9 +8,9 @@ function Projects() {
         Projects
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 gap-5">
-        {projectsData.map((data, i) => (
-          <ProjectCard key={i} data={data} />
-        ))}
+        {projectsData.map((props, i) => {
+          return <ProjectSingle key={i} {...props} />;
+        })}
       </div>
     </section>
   );
