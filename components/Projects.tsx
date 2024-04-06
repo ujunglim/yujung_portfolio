@@ -1,5 +1,4 @@
-import ProjectSingle from "./ProjectSingle";
-import { projectsData } from "../data/projectsData";
+import TubePicker from "./TubePicker";
 
 function Projects() {
   return (
@@ -7,11 +6,7 @@ function Projects() {
       <p className="font-general-medium text-2xl sm:text-4xl text-ternary-dark dark:text-ternary-light mb-4 ">
         Projects
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 gap-5">
-        {projectsData.map((props, i) => {
-          return <ProjectSingle key={i} {...props} />;
-        })}
-      </div>
+      <TubePicker />
     </section>
   );
 }

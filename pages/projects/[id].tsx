@@ -52,7 +52,7 @@ function ProjectSingle(props: any) {
           <div className="flex items-center mb-10 sm:mb-0">
             <button disabled={currI === 0} onClick={() => handleMove("left")}>
               <FaChevronLeft
-                color={`${currI === 0 ? "lightgray" : "#6366F1"}`}
+                color={`${currI === 0 ? "lightgray" : "#7CB0E8"}`}
                 size={40}
               />
             </button>
@@ -72,7 +72,7 @@ function ProjectSingle(props: any) {
             >
               <FaChevronRight
                 color={`${
-                  currI === imgArr.length - 1 ? "lightgray" : "#6366F1"
+                  currI === imgArr.length - 1 ? "lightgray" : "#7CB0E8"
                 }`}
                 size={40}
               />
@@ -85,7 +85,7 @@ function ProjectSingle(props: any) {
           {imgArr.map((ele, i) => (
             <div
               key={i}
-              style={{ background: `${i === currI ? "#6366F1" : "lightgray"}` }}
+              style={{ background: `${i === currI ? "#7CB0E8" : "lightgray"}` }}
               className="w-3 h-3 rounded-full mx-1 cursor-pointer"
               onClick={() => setCurrI(i)}
             ></div>

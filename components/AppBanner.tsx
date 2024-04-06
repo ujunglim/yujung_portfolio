@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import { FiArrowDownCircle } from "react-icons/fi";
-import { FiGithub, FiGlobe } from "react-icons/fi";
+import { FiGithub } from "react-icons/fi";
+import { SiTistory } from "react-icons/si";
 
 const socialLinks = [
   {
     id: 1,
-    icon: <FiGlobe />,
-    url: "https://ujunglim.tistory.com/",
+    icon: <FiGithub />,
+    url: "https://github.com/ujunglim",
   },
   {
     id: 2,
-    icon: <FiGithub />,
-    url: "https://github.com/ujunglim",
+    icon: <SiTistory />,
+    url: "https://ujunglim.tistory.com/",
   },
 ];
 
@@ -62,11 +63,11 @@ function AppBanner() {
             <a
               download="임유정 이력서.pdf"
               href="/files/임유정_이력서.pdf"
-              className="font-general-medium flex justify-center items-center w-20 sm:w-36  sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+              className="font-general-medium flex justify-center items-center w-20 sm:w-36  sm:mb-0 text-lg border  dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-main text-gray-500 hover:text-white duration-100"
               aria-label="Resume"
             >
-              <FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
-              <span className="text-sm sm:text-lg duration-100">이력서</span>
+              <FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-50"></FiArrowDownCircle>
+              <span className="text-sm sm:text-lg duration-50">이력서</span>
             </a>
             <div className="font-general-regular flex flex-col justify-center items-center ">
               <ul className="flex">
@@ -75,7 +76,7 @@ function AppBanner() {
                     href={link.url}
                     target="__blank"
                     key={link.id}
-                    className="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg p-4 duration-300"
+                    className="text-gray-400 hover:text-main cursor-pointer rounded-lg p-4 duration-100"
                   >
                     <i className="text-xl sm:text-2xl md:text-3xl">
                       {link.icon}

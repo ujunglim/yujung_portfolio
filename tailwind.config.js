@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: "#6366F1",
+        main: "#7CB0E8",
         // Light colors
         "primary-light": "#F7F8FC",
         "secondary-light": "#FFFFFF",
