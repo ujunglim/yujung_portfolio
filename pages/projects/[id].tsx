@@ -71,7 +71,9 @@ function ProjectSingle(props: any) {
               onClick={() => handleMove("right")}
             >
               <FaChevronRight
-                color={`${currI === imgArr.length - 1 ? "lightgray" : "black"}`}
+                color={`${
+                  currI === imgArr.length - 1 ? "lightgray" : "#6366F1"
+                }`}
                 size={40}
               />
             </button>
@@ -83,8 +85,8 @@ function ProjectSingle(props: any) {
           {imgArr.map((ele, i) => (
             <div
               key={i}
-              style={{ background: `${i === currI ? "black" : "pink"}` }}
-              className="w-2 h-2 rounded-full mx-2 cursor-pointer"
+              style={{ background: `${i === currI ? "#6366F1" : "lightgray"}` }}
+              className="w-3 h-3 rounded-full mx-1 cursor-pointer"
               onClick={() => setCurrI(i)}
             ></div>
           ))}
@@ -144,25 +146,67 @@ function ProjectSingle(props: any) {
             </p>
           </div>
         </div>
-
         {/*  Single project right section details */}
-        <div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
-          {props.project.ProjectInfo.ProjectDetails.map((details) => {
-            return (
-              <>
-                <p className="text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
-                  {details.title}
-                </p>
+        <div className="flex flex-col w-full sm:w-2/3 text-left mt-10 sm:mt-0">
+          <div>
+            {props.project.ProjectInfo.ProjectDetails.map((details) => {
+              console.log(details);
+              return (
+                <>
+                  <p className="text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
+                    {details.title}
+                  </p>
 
-                <p
-                  key={details.id}
-                  className="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
-                >
-                  {details.details.join(" ")}
-                </p>
-              </>
-            );
-          })}
+                  <p
+                    key={details.id}
+                    className="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
+                  >
+                    {details?.details?.map((e: string, i: number) => (
+                      <p key={i}>{e}</p>
+                    ))}
+                  </p>
+                </>
+              );
+            })}
+          </div>
+          <p className="text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
+            개발내용
+          </p>
+          <ul className="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light">
+            <li>
+              🔹 React, Redux, Typescript, Axios, SCSS로 클라이언트를
+              제작했습니다.
+            </li>
+            <li>
+              🔹 사용자 경험을 향상시키기 위해 페이지를 다시 로드할 때
+              Redux-persist를 사용해 이전 상태를 local storage에 저장했습니다.
+            </li>
+            <li>
+              🔹 Google OAuth2.0 로그인을 구현하고 안전한 정보전송을 위해 JWT
+              Access Token, Refresh Token를 적용했습니다.
+            </li>
+            <li>Route53 도메인을 구입 후 AWS EC2에 배포했습니다.</li>
+            <li>
+              🔹 사용자별 개인 정보와 폴더 데이터를 저장하기 위해 MySQL을
+              연결하였고 dBeaver로 데이터를 관리했습니다
+            </li>
+            <li>
+              🔹 Youtube API를 통해 사용자가 좋아한 비디오, 구독채널 리스트 등의
+              데이터를 수집했습니다.
+            </li>
+            <li>
+              🔹 반복적인 빌드/배포 작업을 자동화하기 위해 Batch, shell
+              스크립트를 작성했습니다.
+            </li>
+            <li>
+              🔹 서버 상 프로세스의 상태 및 에러를 체크하기 위해 pm2를
+              사용했습니다.
+            </li>
+            <li>
+              🔹 Axios의 인터셉터, 인스턴스를 활용하여 네트워크 요청, 응답,
+              에러처리를 모듈화했습니다.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
