@@ -2,8 +2,8 @@ import Image from "next/image";
 import { FiClock, FiTag } from "react-icons/fi";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { IoIosLink } from "react-icons/io";
-import { FaGithub } from "react-icons/fa";
+import LinkGroup from "./LinkGroup";
+import Gallery from "./Gallery";
 
 const data = {
   header: {
@@ -12,10 +12,13 @@ const data = {
     tags: "Design / Frontend / Backend",
   },
   imgs: [
-    "/images/TubePicker/0.png",
-    "/images/TubePicker/1.gif",
-    "/images/TubePicker/2.gif",
-    "/images/TubePicker/3.gif",
+    { src: "/images/TubePicker/0.png", caption: "메인페이지" },
+    {
+      src: "/images/TubePicker/1.gif",
+      caption: "영상 리스트 무한 스크롤 / 보기",
+    },
+    { src: "/images/TubePicker/2.gif", caption: "폴더 생성" },
+    { src: "/images/TubePicker/3.gif", caption: "폴더 수정" },
   ],
   info: {
     link: "https://ujung.link",
@@ -73,10 +76,6 @@ function TubePicker() {
     else if (type === "right") setCurrI((prev) => prev + 1);
   };
 
-  const openPage = (url: string) => {
-    window.open(url, "_blank");
-  };
-
   return (
     <div className="container mx-auto">
       {/* Header */}
@@ -101,65 +100,13 @@ function TubePicker() {
       </div>
 
       {/* Gallery */}
-      <div className="flex flex-col mt-3 px-10 items-center">
-        <div className="flex mb-10 flex-col items-center">
-          <div className="flex items-center mb-10 sm:mb-0">
-            <button disabled={currI === 0} onClick={() => handleMove("left")}>
-              <FaChevronLeft
-                color={`${currI === 0 ? "#e5e5e5" : "#52A5FF"}`}
-                size={40}
-              />
-            </button>
-            <div className=" md:w-[700px] md:h-[500px]  relative overflow-hidden sm:w-[400px] sm:h-[300px] mx-10">
-              <Image
-                src={imgArr[currI]}
-                className="rounded-xl cursor-pointer shadow-lg sm:px-5 min-w-60 min-h-50"
-                alt={`img${currI}`}
-                layout="responsive"
-                width={100}
-                height={100}
-              />
-            </div>
-            <button
-              disabled={currI === imgArr.length - 1}
-              onClick={() => handleMove("right")}
-            >
-              <FaChevronRight
-                color={`${currI === imgArr.length - 1 ? "#e5e5e5" : "#52A5FF"}`}
-                size={40}
-              />
-            </button>
-          </div>
-        </div>
-
-        {/* cascadar 버튼 */}
-        <div className="flex mb-10">
-          {imgArr.map((_, i) => (
-            <div
-              key={i}
-              style={{ background: `${i === currI ? "#52A5FF" : "#e5e5e5"}` }}
-              className="w-3 h-3 rounded-full mx-1 cursor-pointer"
-              onClick={() => setCurrI(i)}
-            ></div>
-          ))}
-        </div>
-      </div>
+      <Gallery imgs={data.imgs} />
 
       {/* Info */}
       <div>
         {/* 링크, 깃헙 */}
-        <button
-          onClick={() => openPage(data.info.link)}
-          className="bg-gray-100 p-2 rounded-md hover:bg-gray-200 transition duration-200 mr-3 text-2xl"
-        >
-          <IoIosLink />
-        </button>
-        <button
-          onClick={() => openPage(data.info.github)}
-          className="bg-gray-100 p-2 rounded-md hover:bg-gray-200 transition duration-200 text-2xl"
-        >
-          <FaGithub />
-        </button>
+        <LinkGroup github={data.info.github} website={data.info.link} />
+
         <div className="dark:text-ternary-light text-md text-gray-600">
           <div className="mb-5"></div>
           {/* 간단 소개 */}

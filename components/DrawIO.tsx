@@ -2,14 +2,14 @@ import Image from "next/image";
 import { FiClock, FiTag } from "react-icons/fi";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { IoIosLink } from "react-icons/io";
-import { FaGithub } from "react-icons/fa";
+import LinkGroup from "./LinkGroup";
+import Gallery from "./Gallery";
 
 const data = {
   header: {
     title: "DrawIO",
     publishDate: "2023/02 ~ 2023/03",
-    tags: "Design / Frontend ",
+    tags: "Design / Frontend",
   },
   imgs: [
     {
@@ -86,68 +86,13 @@ function DrawIO() {
       </div>
 
       {/* Gallery */}
-      <div className="flex flex-col mt-3 px-10 items-center">
-        <div className="flex mb-10 flex-col items-center">
-          <div className="flex items-center mb-10 sm:mb-0">
-            <button disabled={currI === 0} onClick={() => handleMove("left")}>
-              <FaChevronLeft
-                color={`${currI === 0 ? "#e5e5e5" : "#52A5FF"}`}
-                size={40}
-              />
-            </button>
-            <div className="flex flex-col items-center">
-              <div className="flex items-center md:w-[700px] md:h-[500px]  relative overflow-hidden sm:w-[400px] sm:h-[300px] mx-10">
-                <Image
-                  src={imgArr[currI].src}
-                  className="rounded-xl cursor-pointer shadow-lg sm:px-5 min-w-60 min-h-50"
-                  alt={`img${currI}`}
-                  layout="responsive"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <span>{imgArr[currI].caption}</span>
-            </div>
-            <button
-              disabled={currI === imgArr.length - 1}
-              onClick={() => handleMove("right")}
-            >
-              <FaChevronRight
-                color={`${currI === imgArr.length - 1 ? "#e5e5e5" : "#52A5FF"}`}
-                size={40}
-              />
-            </button>
-          </div>
-        </div>
-
-        {/* cascadar 버튼 */}
-        <div className="flex mb-10">
-          {imgArr.map((_, i) => (
-            <div
-              key={i}
-              style={{ background: `${i === currI ? "#52A5FF" : "#e5e5e5"}` }}
-              className="w-3 h-3 rounded-full mx-1 cursor-pointer"
-              onClick={() => setCurrI(i)}
-            ></div>
-          ))}
-        </div>
-      </div>
+      <Gallery imgs={data.imgs} />
 
       {/* Info */}
       <div>
         {/* 링크, 깃헙 */}
-        <button
-          onClick={() => openPage(data.info.link)}
-          className="bg-gray-100 p-2 rounded-md hover:bg-gray-200 transition duration-200 mr-3 text-2xl"
-        >
-          <IoIosLink />
-        </button>
-        <button
-          onClick={() => openPage(data.info.github)}
-          className="bg-gray-100 p-2 rounded-md hover:bg-gray-200 transition duration-200 text-2xl"
-        >
-          <FaGithub />
-        </button>
+        <LinkGroup github={data.info.github} website={data.info.link} />
+
         <div className="dark:text-ternary-light text-md text-gray-600">
           <div className="mb-5"></div>
           {/* 간단 소개 */}
@@ -196,8 +141,58 @@ function DrawIO() {
             </div>
           </div>
           <br />
-          <h1 className="text-lg font-bold">[aa]</h1>
-          <p>aa</p>
+          <h1 className="text-lg font-bold">[React 너 이래서 필요하구나]</h1>
+          <br />
+          <p>
+            초기에 바닐라JS로 데모버전을 만드는 과정에서 데이터가 변경될 때마다
+            수동적으로 view를 업데이트 해줘야했습니다. 그래서 init,
+            updateView함수를 남발하였고, 오류가 생기면 어디에서 생긴건지
+            파악하기 힘들었습니다.
+          </p>
+          <br />
+          <p>
+            이 과정에서 useEffect, useState를 원리를 파악할 수 있었고, React는
+            Data Driven 구조라서 데이터가 바뀌면 자동으로 리렌더링이 되고 상태
+            관리 라이브러리를 통해 데이터를 관리하기 매우 편리한 프레임워크라는
+            것을 느꼈습니다.
+          </p>
+          <br />
+          <h1 className="text-lg font-bold">[typescript 사용]</h1>
+          <br />
+          <p>
+            객체는 점차 많아지지만 type checking이 되지 않아 사소한 실수와
+            런타임 에러가 빈번하게 일어나서 중반에 typescript을 도입했습니다.
+          </p>
+          <p>
+            기존의 Javascript를 Typescript로 변환하는 과정에서 꽤 많은 시간을
+            소비했지만 그 후 개발에 안정성이 증가하였고 컴파일링 단계에서 에러를
+            1차적으로 걸러주기 때문에 에러를 처리하는 속도가 빨라졌습니다.
+          </p>
+          <br />
+          <h1 className="text-lg font-bold">[Redux대신 Mobx을 사용한 이유]</h1>
+          <br />
+          <p>객체 지향적 프로젝트라서 MobX가 더욱 자연스럽다고 생각했습니다.</p>
+          <p>
+            Mobx는 리덕스의 보일러플레이트 필요없이 makeObservable ,
+            observable로 클래스의 속성에 대한 직관적인 관찰, 반응이 가능하다는
+            점이 Redux보다 객체 지향적입니다.
+          </p>
+          <p>
+            또한 Mobx는 양방향 플로우로 데이터가 변경되면 자동으로 업데이트 되어
+            복잡한 다이어그램의 데이터 흐름과 변경을 관리하기 편리하다고
+            생각했습니다.
+          </p>
+          <br />
+
+          <h1 className="text-lg font-bold">[디자인 패턴 이해]</h1>
+          <br />
+          <p>싱글톤과 전략패턴에 대해 이해할 수 있었습니다.</p>
+          <p>
+            최상단의 DrawController 클래스를 싱글톤으로 만들어 하위 클래스들을
+            컨트롤 했습니다. 전역적으로 싱글톤 인스턴스에 접근가능하여 여러
+            부분에서 동일한 인스턴스를 공유하며 데이터를 일관되게 유지 할 수
+            있었습니다.
+          </p>
         </div>
       </div>
     </div>
