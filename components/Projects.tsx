@@ -1,3 +1,7 @@
+import DrawIO from "./DrawIO";
+import FengKong from "./FengKong";
+import FitHub from "./FitHub";
+import ShaoXing from "./ShaoXing";
 import TubePicker from "./TubePicker";
 
 function Projects() {
@@ -7,6 +11,10 @@ function Projects() {
         Projects
       </p>
       <TubePicker />
+      <FitHub />
+      <FengKong />
+      <ShaoXing />
+      <DrawIO />
     </section>
   );
 }

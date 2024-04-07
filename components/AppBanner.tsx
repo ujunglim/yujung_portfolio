@@ -59,15 +59,15 @@ function AppBanner() {
           }}
           className="flex justify-center sm:block"
         >
-          <div className="flex mt-12 mb-6">
+          <div className="flex mt-3 mb-6">
             <a
               download="임유정 이력서.pdf"
               href="/files/임유정_이력서.pdf"
-              className="font-general-medium flex justify-center items-center w-20 sm:w-36  sm:mb-0 text-lg border  dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-main text-gray-500 hover:text-white duration-100"
+              className="font-general-medium flex justify-center items-center w-20 sm:w-36  sm:mb-0 text-lg border  dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-blue-50 focus:ring-1 hover:bg-main text-gray-500 hover:text-white duration-200"
               aria-label="Resume"
             >
-              <FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-50"></FiArrowDownCircle>
-              <span className="text-sm sm:text-lg duration-50">이력서</span>
+              <FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
+              <span className="text-sm sm:text-lg duration-100">이력서</span>
             </a>
             <div className="font-general-regular flex flex-col justify-center items-center ">
               <ul className="flex">

@@ -4,15 +4,6 @@ import { projectsData } from "../../data/projectsData";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-export async function getServerSideProps({ query }: any) {
-  const { id } = query;
-  return {
-    props: {
-      project: projectsData.filter((project) => project.id === parseInt(id))[0],
-    },
-  };
-}
-
 function ProjectSingle(props: any) {
   const [currI, setCurrI] = useState<number>(0);
   const imgArr = props.project.ProjectImages;
@@ -47,12 +38,12 @@ function ProjectSingle(props: any) {
       </div>
 
       {/* Gallery */}
-      <div className="flex flex-col mt-12 p-10 items-center">
+      <div className="flex flex-col mt-3 px-10 items-center">
         <div className="flex mb-10 flex-col items-center">
           <div className="flex items-center mb-10 sm:mb-0">
             <button disabled={currI === 0} onClick={() => handleMove("left")}>
               <FaChevronLeft
-                color={`${currI === 0 ? "lightgray" : "#7CB0E8"}`}
+                color={`${currI === 0 ? "lightgray" : "#52A5FF"}`}
                 size={40}
               />
             </button>
@@ -72,7 +63,7 @@ function ProjectSingle(props: any) {
             >
               <FaChevronRight
                 color={`${
-                  currI === imgArr.length - 1 ? "lightgray" : "#7CB0E8"
+                  currI === imgArr.length - 1 ? "lightgray" : "#52A5FF"
                 }`}
                 size={40}
               />
@@ -85,7 +76,7 @@ function ProjectSingle(props: any) {
           {imgArr.map((ele, i) => (
             <div
               key={i}
-              style={{ background: `${i === currI ? "#7CB0E8" : "lightgray"}` }}
+              style={{ background: `${i === currI ? "#52A5FF" : "lightgray"}` }}
               className="w-3 h-3 rounded-full mx-1 cursor-pointer"
               onClick={() => setCurrI(i)}
             ></div>
@@ -97,7 +88,7 @@ function ProjectSingle(props: any) {
       </div>
 
       {/* Info */}
-      <div className="block sm:flex gap-0 sm:gap-10 mt-14">
+      <div className="block sm:flex gap-0 sm:gapx-10 mt-14">
         <div className="w-full sm:w-1/3 text-left">
           {/* Tech*/}
           <div className="mb-7">
