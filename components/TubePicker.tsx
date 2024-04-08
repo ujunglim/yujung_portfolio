@@ -15,7 +15,7 @@ const data = {
     { src: "/images/TubePicker/0.png", caption: "메인페이지" },
     {
       src: "/images/TubePicker/1.gif",
-      caption: "영상 리스트 무한 스크롤 / 보기",
+      caption: "영상 보기 / 리스트 무한 스크롤",
     },
     { src: "/images/TubePicker/2.gif", caption: "폴더 생성" },
     { src: "/images/TubePicker/3.gif", caption: "폴더 수정" },
@@ -68,14 +68,6 @@ const data = {
 };
 
 function TubePicker() {
-  const [currI, setCurrI] = useState<number>(0);
-  const imgArr = data.imgs;
-
-  const handleMove = (type: "left" | "right") => {
-    if (type === "left") setCurrI((prev) => prev - 1);
-    else if (type === "right") setCurrI((prev) => prev + 1);
-  };
-
   return (
     <div className="container mx-auto">
       {/* Header */}

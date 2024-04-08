@@ -56,14 +56,6 @@ const data = {
 };
 
 function ShaoXing() {
-  const [currI, setCurrI] = useState<number>(0);
-  const imgArr = data.imgs;
-
-  const handleMove = (type: "left" | "right") => {
-    if (type === "left") setCurrI((prev) => prev - 1);
-    else if (type === "right") setCurrI((prev) => prev + 1);
-  };
-
   return (
     <div className="container mx-auto">
       {/* Header */}

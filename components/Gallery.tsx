@@ -40,7 +40,9 @@ const Gallery = ({ imgs }: any) => {
             />
           </button>
         </div>
-        <span className="mt-5">{imgs[currI]?.caption}</span>
+        <span className="mt-5 dark:text-ternary-light">
+          {imgs[currI]?.caption}
+        </span>
       </div>
 
       {/* cascadar 버튼 */}

@@ -44,24 +44,23 @@ const data = {
       "React",
       "Antd",
     ],
-    works: [],
-    blog: [],
+    works: [
+      "Canvas, 바닐라JS 를 사용해 그래프 생성, 삭제, 라인 연결과 같은 기본 기능을 구현",
+      "점, 선, 면, 직사각형 등 많아지는 객체들의 복잡한 로직을 체계적으로 관리하기 위해 클래스로 관련 데이터와 메소드를 OOP화",
+      "OOP + React 구현 (Model과 Controller는 OOP / View는 React)",
+      "Draw Controller로 View / Manager / Model을 컨트롤",
+      "객체 지향적인 성향에 맞춰 MobX로 상태관리",
+    ],
+    blog: [
+      {
+        text: "개발기록",
+        url: "https://www.notion.so/limew/Draw-IO-1039c15e08794d5e8205cd36a52e2a22",
+      },
+    ],
   },
 };
 
 function DrawIO() {
-  const [currI, setCurrI] = useState<number>(0);
-  const imgArr = data.imgs;
-
-  const handleMove = (type: "left" | "right") => {
-    if (type === "left") setCurrI((prev) => prev - 1);
-    else if (type === "right") setCurrI((prev) => prev + 1);
-  };
-
-  const openPage = (url: string) => {
-    window.open(url, "_blank");
-  };
-
   return (
     <div className="container mx-auto">
       {/* Header */}

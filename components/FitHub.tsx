@@ -33,18 +33,6 @@ const data = {
 };
 
 function FitHub() {
-  const [currI, setCurrI] = useState<number>(0);
-  const imgArr = data.imgs;
-
-  const handleMove = (type: "left" | "right") => {
-    if (type === "left") setCurrI((prev) => prev - 1);
-    else if (type === "right") setCurrI((prev) => prev + 1);
-  };
-
-  const openPage = (url: string) => {
-    window.open(url, "_blank");
-  };
-
   return (
     <div className="container mx-auto">
       {/* Header */}
