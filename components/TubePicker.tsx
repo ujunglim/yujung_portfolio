@@ -47,7 +47,7 @@ const data = {
       "사용자와 폴더 데이터를 MySQL에 저장 및 dBeaver로 관리",
       "YouTube API를 이용해 사용자의 구독채널, 좋아한 영상 리스트 등 출력",
       "채널제목 선택/검색하여 만든 폴더의 CRUD 구현",
-      "반복적인 빌드/배포 작업을 자동화하기 위해 Batch, shell 스크립트 작성",
+      "반복적인 CI/CD 작업을 자동화하기 위해 Batch, shell 스크립트 작성",
       "사용자 경험 향상을 위해 Redux-persist를 사용해 이전 상태를 local storage에 저장",
     ],
     blog: [

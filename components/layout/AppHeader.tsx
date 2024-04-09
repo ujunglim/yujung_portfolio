@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiMoon, FiSun, FiX, FiMenu } from "react-icons/fi";
-import useThemeSwitcher from "../../hooks/useThemeSwitcher";
+// import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 
 function AppHeader() {
-  const [showMenu, setShowMenu] = useState(false);
-  const [activeTheme, setTheme] = useThemeSwitcher();
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [isClient, setIsClient] = useState<boolean>(false);
+  const [currTheme, setCurrTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove(currTheme);
+    if (currTheme === "light") root.classList.add("dark");
+    if (currTheme === "dark") root.classList.add("light");
+  }, [currTheme]);
 
   function toggleMenu() {
     if (!showMenu) {
@@ -27,9 +39,7 @@ function AppHeader() {
       <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
         <div className="flex justify-between items-center px-4 sm:px-0">
           {/* 로고 */}
-          <div className="dark:text-ternary-light">
-            <Link href="/">YuJung</Link>
-          </div>
+          <div className="dark:text-ternary-light">YuJung</div>
 
           {/* 작은 화면의 햄버거메뉴 */}
           <div className="sm:hidden">
@@ -85,37 +95,45 @@ function AppHeader() {
             className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="Projects"
           >
-            <Link href="/projects">Projects</Link>
+            <button>Project</button>
           </div>
           <div
             className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="About Me"
           >
-            <Link href="/about">About Me</Link>
+            <button>Work</button>
           </div>
 
           <div
             className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="Study"
           >
-            <Link href="/study">Study</Link>
+            <button>Study</button>
           </div>
         </div>
 
         {/* 헤더 우측 theme switcher*/}
-        <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
-          <div
-            onClick={() => setTheme(activeTheme)}
-            aria-label="Theme Switcher"
-            className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
-          >
-            {activeTheme === "dark" ? (
-              <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
-            ) : (
-              <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
-            )}
+        {isClient && (
+          <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
+            <div
+              onClick={() => {
+                if (currTheme === "light") {
+                  setCurrTheme("dark");
+                } else {
+                  setCurrTheme("light");
+                }
+              }}
+              aria-label="Theme Switcher"
+              className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
+            >
+              {currTheme === "dark" ? (
+                <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
+              ) : (
+                <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </motion.nav>
   );
