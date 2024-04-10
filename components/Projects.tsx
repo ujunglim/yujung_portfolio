@@ -11,7 +11,7 @@ function Projects() {
       id="projects"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
+      // transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       className="flex flex-col items-center py-5 sm:py-10 mt-5 sm:mt-10"
     >
       <CategoryTitle text="PROJECT" />

@@ -30,11 +30,11 @@ function AppBanner() {
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{
-              ease: "easeInOut",
-              duration: 0.9,
-              delay: 0.1,
-            }}
+            // transition={{
+            //   ease: "easeInOut",
+            //   duration: 0.9,
+            //   delay: 0.1,
+            // }}
             className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-white uppercase"
           >
             안녕하세요 임유정입니다.
@@ -42,11 +42,11 @@ function AppBanner() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{
-              ease: "easeInOut",
-              duration: 0.9,
-              delay: 0.8,
-            }}
+            // transition={{
+            //   ease: "easeInOut",
+            //   duration: 0.9,
+            //   delay: 0.8,
+            // }}
             className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal  text-primary-light mb-[3rem]"
           >
             프론트엔드 개발자
@@ -54,11 +54,11 @@ function AppBanner() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{
-              ease: "easeInOut",
-              duration: 0.9,
-              delay: 1.6,
-            }}
+            // transition={{
+            //   ease: "easeInOut",
+            //   duration: 0.9,
+            //   delay: 1.6,
+            // }}
             className="flex justify-center sm:block"
           >
             <div className="flex mt-3 mb-6">
