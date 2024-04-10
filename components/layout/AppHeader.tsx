@@ -7,7 +7,7 @@ import { FiMoon, FiSun, FiX, FiMenu } from "react-icons/fi";
 function AppHeader() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [isClient, setIsClient] = useState<boolean>(false);
-  const [currTheme, setCurrTheme] = useState<"light" | "dark">("light");
+  const [currTheme, setCurrTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     setIsClient(true);
@@ -48,14 +48,18 @@ function AppHeader() {
       id="nav"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="sm:container sm:mx-auto fixed w-[100%] bg-secondary-light  dark:bg-primary-dark transition duration-300"
+      className="z-10 fixed w-[100%] flex justify-center bg-white dark:bg-primary-dark transition duration-300"
     >
       {/* 헤더 */}
-      <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
+      <div className="max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6 w-[100%]">
         <div className="flex justify-between items-center px-4 sm:px-0">
           {/* 로고 */}
-          <div className="dark:text-ternary-light">YuJung</div>
-
+          <Link href={"/"} className="flex items-center">
+            <img src="/logo.png" alt="logo" className="mr-3" />
+            <div className="dark:text-ternary-light text-2xl font-bold text-ternary-dark">
+              YuJung
+            </div>
+          </Link>
           {/* 작은 화면의 햄버거메뉴 */}
           <div className="sm:hidden">
             <button
@@ -88,13 +92,13 @@ function AppHeader() {
           }
           `}
         >
-          <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2">
+          <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-white  sm:mx-4 mb-2 sm:py-2">
             <button onClick={() => moveTo("projects", true)}>Projects</button>
           </div>
-          <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+          <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-white  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
             <button onClick={() => moveTo("work", true)}>Work</button>
           </div>
-          <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+          <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-white  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
             <button onClick={() => moveTo("aboutMe", true)}>About Me</button>
           </div>
         </div>
@@ -102,23 +106,23 @@ function AppHeader() {
         {/* 큰 화면에서 메뉴 */}
         <div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
           <div
-            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-white  sm:mx-4 mb-2 sm:py-2"
             aria-label="Projects"
           >
             <button onClick={() => moveTo("projects")}>Project</button>
           </div>
           <div
-            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-white  sm:mx-4 mb-2 sm:py-2"
             aria-label="Work"
           >
             <button onClick={() => moveTo("work")}>Work</button>
           </div>
 
           <div
-            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-white  sm:mx-4 mb-2 sm:py-2"
             aria-label="About Me"
           >
-            <button>About Me</button>
+            <button onClick={() => moveTo("aboutMe")}>About Me</button>
           </div>
         </div>
 

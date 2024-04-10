@@ -12,7 +12,7 @@ const data = {
     tags: "Design / Frontend / Backend",
   },
   imgs: [
-    { src: "/images/TubePicker/0.png", caption: "메인페이지" },
+    { src: "/images/TubePicker/0.gif", caption: "로그인 / 메인페이지" },
     {
       src: "/images/TubePicker/1.gif",
       caption: "영상 보기 / 리스트 무한 스크롤",
