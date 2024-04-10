@@ -24,7 +24,7 @@ const CategoryTitle = ({ text }: { text: string }) => {
           duration: 1,
           delay: 0.3,
         }}
-        className="w-[250px] h-2 bg-main"
+        className="sm:w-[250px] h-2 bg-main w-[150px]"
       />
     </>
   );

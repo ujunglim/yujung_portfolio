@@ -8,6 +8,7 @@ import CategoryTitle from "./CategoryTitle";
 function Projects() {
   return (
     <motion.section
+      id="projects"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}

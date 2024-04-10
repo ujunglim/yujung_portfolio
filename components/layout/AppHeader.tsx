@@ -28,12 +28,27 @@ function AppHeader() {
     }
   }
 
+  function moveTo(
+    type: "projects" | "work" | "aboutMe",
+    isSmall: boolean = false
+  ) {
+    const headerH = isSmall ? 242 : 112;
+    if (!document) return;
+    const targetElement: HTMLElement | null = document.getElementById(type);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - headerH,
+        behavior: "smooth",
+      });
+    }
+  }
+
   return (
     <motion.nav
+      id="nav"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      id="nav"
-      className="sm:container sm:mx-auto"
+      className="sm:container sm:mx-auto fixed w-[100%] bg-secondary-light  dark:bg-primary-dark transition duration-300"
     >
       {/* 헤더 */}
       <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
@@ -66,26 +81,21 @@ function AppHeader() {
 
         {/* 작은 화면의 메뉴 */}
         <div
-          className={
+          className={`${
             showMenu
               ? "block m-0 sm:ml-4 sm:mt-3 md:flex px-5 py-3 sm:p-0 justify-between items-center shadow-lg sm:shadow-none"
               : "hidden"
           }
+          `}
         >
           <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2">
-            <Link href="/projects" aria-label="Projects">
-              Projects
-            </Link>
+            <button onClick={() => moveTo("projects", true)}>Projects</button>
           </div>
           <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-            <Link href="/about" aria-label="About Me">
-              About Me
-            </Link>
+            <button onClick={() => moveTo("work", true)}>Work</button>
           </div>
           <div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-            <Link href="/study" aria-label="Study">
-              Study
-            </Link>
+            <button onClick={() => moveTo("aboutMe", true)}>About Me</button>
           </div>
         </div>
 
@@ -95,20 +105,20 @@ function AppHeader() {
             className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="Projects"
           >
-            <button>Project</button>
+            <button onClick={() => moveTo("projects")}>Project</button>
           </div>
           <div
             className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-            aria-label="About Me"
+            aria-label="Work"
           >
-            <button>Work</button>
+            <button onClick={() => moveTo("work")}>Work</button>
           </div>
 
           <div
             className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-            aria-label="Study"
+            aria-label="About Me"
           >
-            <button>Study</button>
+            <button>About Me</button>
           </div>
         </div>
 

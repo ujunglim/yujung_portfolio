@@ -7,11 +7,11 @@ interface MyComponentProps {
 
 const DefaultLayout: React.FC<MyComponentProps> = ({ children }) => {
   return (
-    <>
+    <div className="flex flex-col items-center">
       <AppHeader />
-      <div>{children}</div>
+      <div className="mt-[200px]">{children}</div>
       <AppFooter />
-    </>
+    </div>
   );
 };
 

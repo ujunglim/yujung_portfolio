@@ -24,6 +24,10 @@ a {
   transition: all 200ms ease;
 }
 
+button {
+  outline: none;
+}
+
 .link:hover {
   background-color: theme(colors.submain);
 }
