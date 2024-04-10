@@ -29,7 +29,7 @@ const WorkDetail: FC<any> = ({ data }) => {
       {/* 직무 */}
       <div className="mb-10 flex">{data.position}</div>
 
-      {data?.work?.map((e, i) => {
+      {data?.work?.map((e: string, i: number) => {
         return (
           <p key={i} className="mb-3 ml-5">
             ● {e}
