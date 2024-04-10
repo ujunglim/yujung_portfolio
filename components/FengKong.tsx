@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { FiClock, FiTag } from "react-icons/fi";
-import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Gallery from "./Gallery";
 
 const data = {
