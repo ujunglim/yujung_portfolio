@@ -33,7 +33,7 @@ function useScrollToTop() {
   return (
     <button className="bg-main rounded-full fixed bottom-7 right-10 transition-all ease-in-out duration-300">
       <FiChevronUp
-        className="text-primary-light bg-red-300"
+        className="text-primary-light"
         style={{ display: showScroll ? "flex" : "none" }}
         onClick={backToTop}
         size={50}

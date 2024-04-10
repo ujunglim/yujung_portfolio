@@ -9,7 +9,7 @@ const AboutMe = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       // transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      className="w-[100%] flex flex-col items-center py-5 sm:py-10 mt-5 sm:mt-10 bg-cover bg-center"
+      className="w-[100%] flex flex-col items-center py-5 sm:py-10 mt-15 sm:mt-20 bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/aboutme.jpg')",
         backgroundRepeat: "no-repeat",

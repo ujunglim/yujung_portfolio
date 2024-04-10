@@ -55,7 +55,7 @@ function FengKong() {
     <div className="container mx-auto">
       {/* Header */}
       <div>
-        <p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7">
+        <p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-7 sm:mt-10 mb-7">
           {data.header.title}
         </p>
         <div className="flex">
