@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiMoon, FiSun, FiX, FiMenu } from "react-icons/fi";
+import Image from "next/image";
 // import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 
 function AppHeader() {
@@ -55,7 +56,13 @@ function AppHeader() {
         <div className="flex justify-between items-center px-4 sm:px-0">
           {/* 로고 */}
           <Link href={"/"} className="flex items-center">
-            <img src="/logo.png" alt="logo" className="mr-3" />
+            <Image
+              src="/logo.png"
+              alt="logo"
+              className="mr-3"
+              width={30}
+              height={30}
+            />
             <div className="dark:text-ternary-light text-2xl font-bold text-ternary-dark">
               YuJung
             </div>
