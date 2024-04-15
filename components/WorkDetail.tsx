@@ -10,11 +10,11 @@ interface Prop {
 
 const WorkDetail: FC<any> = ({ data }) => {
   return (
-    <div className="w-[100%] px-[98px] mt-[80px] dark:text-ternary-light">
-      <div className="flex items-end mb-5">
+    <div className="w-[100%] sm:px-[98px] px-4 mt-[80px] dark:text-ternary-light">
+      <div className="flex sm:items-end mb-5 flex-col sm:flex-row">
         {data.companyUrl ? (
           <a
-            className="text-3xl font-bold mr-3 hover:bg-submain hover:bg-opacity-50"
+            className="sm:text-3xl text-2xl font-bold mr-3 hover:bg-submain hover:bg-opacity-50"
             href={data?.companyUrl}
             target="_blank"
             style={{ borderBottom: "2px solid" }}
@@ -22,9 +22,11 @@ const WorkDetail: FC<any> = ({ data }) => {
             {data.companyName}
           </a>
         ) : (
-          <h1 className="text-3xl font-bold mr-3">{data.companyName}</h1>
+          <h1 className="sm:text-3xl text-2xl font-bold mr-3">
+            {data.companyName}
+          </h1>
         )}
-        <span>{data.date}</span>
+        <span className="sm:mt-0 mt-2">{data.date}</span>
       </div>
       {/* 직무 */}
       <div className="mb-10 flex">{data.position}</div>

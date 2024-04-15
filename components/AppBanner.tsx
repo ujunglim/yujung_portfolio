@@ -23,7 +23,7 @@ function AppBanner() {
       animate={{ opacity: 1 }}
       // transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       style={{ backgroundImage: "url('/images/bgimg.jpg')" }}
-      className="bg-cover bg-center w-[100%] h-[846px] mt-[112px]"
+      className="bg-cover bg-center w-[100%] sm:h-[846px] h-[500px] mt-[112px]"
     >
       <div className="relative top-[15%] sm:left-[10%]">
         <div>
@@ -47,7 +47,7 @@ function AppBanner() {
             //   duration: 0.9,
             //   delay: 0.8,
             // }}
-            className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal  text-primary-light mb-[3rem]"
+            className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal  text-primary-light sm:mb-[3rem] mb-1"
           >
             프론트엔드 개발자
           </motion.p>

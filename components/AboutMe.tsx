@@ -9,14 +9,14 @@ const AboutMe = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       // transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      className="w-[100%] flex flex-col items-center py-5 sm:py-10 mt-15 sm:mt-20 bg-cover bg-center"
+      className="text-sm sm:text-base w-[100%] flex flex-col items-center py-5 sm:py-10 mt-15 sm:mt-20 bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/aboutme.jpg')",
         backgroundRepeat: "no-repeat",
       }}
     >
       <CategoryTitle text="ABOUT ME" isWhite />
-      <div className="w-[60%] container mx-auto font-general-medium text-left text-primary-dark mt-14 sm:mt-20 mb-7 bg-white bg-opacity-80 rounded-lg p-7">
+      <div className="sm:w-[60%] w-[93%] container mx-auto font-general-medium text-left text-primary-dark mt-14 sm:mt-20 mb-7 bg-white bg-opacity-80 rounded-lg p-7">
         <p>
           나, 그리고 우리가 겪고 있는 불편함을 해결하여 좀 더 편리한 세상을
           만들기 위해 개발자가 되었습니다. 사람들에게 진정한 가치와 감동을

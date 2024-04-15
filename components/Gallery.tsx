@@ -14,13 +14,17 @@ const Gallery = ({ imgs }: any) => {
     <div className="flex flex-col mt-6 px-10 items-center">
       <div className="flex mb-10 flex-col items-center">
         <div className="flex items-center mb-10 sm:mb-0">
-          <button disabled={currI === 0} onClick={() => handleMove("left")}>
+          <button
+            disabled={currI === 0}
+            onClick={() => handleMove("left")}
+            className="text-3xl"
+          >
             <FaChevronLeft
               color={`${currI === 0 ? "#e5e5e5" : "#52A5FF"}`}
-              size={40}
+              // size={40}
             />
           </button>
-          <div className="flex items-center md:w-[700px] md:h-[500px] overflow-hidden sm:w-[400px] sm:h-[300px] mx-10">
+          <div className="flex items-center md:w-[700px] md:h-[500px] overflow-hidden sm:w-[400px] sm:h-[300px] sm:mx-10 mx-5">
             <Image
               src={imgs[currI]?.src}
               className="rounded-xl cursor-pointer shadow-lg sm:px-5 min-w-60 min-h-50"
@@ -33,10 +37,11 @@ const Gallery = ({ imgs }: any) => {
           <button
             disabled={currI === imgs.length - 1}
             onClick={() => handleMove("right")}
+            className="text-3xl"
           >
             <FaChevronRight
               color={`${currI === imgs.length - 1 ? "#e5e5e5" : "#52A5FF"}`}
-              size={40}
+              // size={40}
             />
           </button>
         </div>

@@ -66,11 +66,11 @@ function DrawIO() {
     <div className="container mx-auto">
       {/* Header */}
       <div>
-        <p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7">
+        <p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-10 sm:mt-20 mb-7">
           {data.header.title}
         </p>
         <div className="flex">
-          <div className="flex items-center mr-10">
+          <div className="flex items-center sm:mr-10 mr-3">
             <FiClock className="text-xl text-ternary-dark dark:text-ternary-light" />
             <span className="font-general-regular ml-2 leading-none text-primary-dark dark:text-primary-light">
               {data.header.publishDate}
@@ -96,7 +96,7 @@ function DrawIO() {
         <div className="dark:text-ternary-light text-md text-gray-600">
           <div className="mb-5"></div>
           {/* 간단 소개 */}
-          <div className="mb-5 flex">
+          <div className="mb-5 flex flex-col sm:flex-row">
             <div className="whitespace-nowrap font-general-regular font-semibold text-gray-400 dark:text-ternary-light mr-4">
               간단 소개
             </div>
@@ -106,14 +106,14 @@ function DrawIO() {
             </div>
           </div>
           {/* 사용 기술 */}
-          <div className="mb-5 flex">
+          <div className="mb-5 flex flex-col sm:flex-row">
             <div className="whitespace-nowrap font-general-regular font-semibold text-gray-400 dark:text-ternary-light mr-4">
               사용 기술
             </div>
             <div>{data.info.techs.join(", ")}</div>
           </div>
           {/* 주요 작업 */}
-          <div className="mb-5 flex">
+          <div className="mb-5 flex flex-col sm:flex-row">
             <div className="whitespace-nowrap font-general-regular font-semibold text-gray-400 dark:text-ternary-light mr-4">
               주요 작업
             </div>
@@ -124,7 +124,7 @@ function DrawIO() {
             </div>
           </div>
           {/* 작성한 글 */}
-          <div className="mb-5 flex">
+          <div className="mb-5 flex flex-col sm:flex-row">
             <div className="whitespace-nowrap font-general-regular font-semibold text-gray-400 dark:text-ternary-light mr-4">
               작성한 글
             </div>
