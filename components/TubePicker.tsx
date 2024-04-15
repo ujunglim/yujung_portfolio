@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import LinkGroup from "./LinkGroup";
 import Gallery from "./Gallery";
+import CustomAccordion from "./CustomAccordion";
 
 const data = {
   header: {
@@ -146,48 +147,47 @@ function TubePicker() {
               })}
             </div>
           </div>
-          <br />
 
-          <h1 className="text-lg font-bold">
-            [토큰 유효성 검사를 위한 Interceptor 기능을 활용해 코드 중복 제거]
-          </h1>
-          <br />
-          <p>
-            안전한 정보전송을 위해 정보를 찾다가 JWT의 Access 토큰과 Refresh
-            토큰을 알게 되었습니다. 모든 API요청에 앞서 인증 토큰과 리프레시
-            토큰의 유효성 인증이 통과해야만 사용할 수 있고, 안 되면 다시 로그인
-            페이지로 돌아가는 기능을 구현하고 싶었습니다.
-          </p>
-          <br />
-          <p>
-            만약 기존 모든 API에 유효성을 검증하는 API를 호출하는 코드를 추가할
-            경우, 코드의 중복성이 크게 증가하며, 확장성에도 문제가 생길 것으로
-            판단되었습니다. 이 문제를 해결하기 위해 사용하고 있던 HTTP
-            라이브러리인 Axios의 문서를 조사했고, Axios의 Interceptor라는 기능을
-            발견할 수 있었습니다
-          </p>
-          <br />
-
-          <p>
-            API 요청 전후로 특정 로직을 삽입할 수 있는 Interceptor에는 두 가지
-            적용 방식이 있었습니다. 첫 번째 방식은 특정 Axios 인스턴스에만
-            적용되는 방식으로, 유연성을 제공하며 다른 인스턴스에는 영향을 미치지
-            않았습니다. 반면, 두 번째 방식인 axios config에 interceptor를
-            추가하는 방식은 모든 API 호출에 동일한 로직을 적용할 수 있지만, 특정
-            요청에 대한 로직을 변경하려면 매번 추가적인 코드 수정이
-            필요했습니다.
-          </p>
-          <br />
-
-          <p>
-            프로젝트의 확장성과 유연성을 고려하여, 최종적으로 특정 Axios
-            인스턴스에만 Interceptor를 적용하는 방식을 선택해서 구현했습니다
-          </p>
-          <p>
-            결과적으로, Axios의 Interceptor를 통해 인증 토큰과 리프레시 토큰의
-            유효성을 체크하는 로직을 구현하면서, 코드의 중복을 크게 줄일 수
-            있었습니다.
-          </p>
+          <CustomAccordion
+            title="토큰 유효성 검사를 위한 Interceptor 기능을 활용해 코드 중복 제거"
+            content={
+              <>
+                <p>
+                  안전한 정보전송을 위해 정보를 찾다가 JWT의 Access 토큰과
+                  Refresh 토큰을 알게 되었습니다. 모든 API요청에 앞서 인증
+                  토큰과 리프레시 토큰의 유효성 인증이 통과해야만 사용할 수
+                  있고, 안 되면 다시 로그인 페이지로 돌아가는 기능을 구현하고
+                  싶었습니다.
+                </p>
+                <br />
+                <p>
+                  만약 기존 모든 API에 유효성을 검증하는 API를 호출하는 코드를
+                  추가할 경우, 코드의 중복성이 크게 증가하며, 확장성에도 문제가
+                  생길 것으로 판단되었습니다. 이 문제를 해결하기 위해 사용하고
+                  있던 HTTP 라이브러리인 Axios의 문서를 조사했고, Axios의
+                  Interceptor라는 기능을 발견할 수 있었습니다
+                </p>
+                <br />
+                <p>
+                  API 요청 전후로 특정 로직을 삽입할 수 있는 Interceptor에는 두
+                  가지 적용 방식이 있었습니다. 첫 번째 방식은 특정 Axios
+                  인스턴스에만 적용되는 방식으로, 유연성을 제공하며 다른
+                  인스턴스에는 영향을 미치지 않았습니다. 반면, 두 번째 방식인
+                  axios config에 interceptor를 추가하는 방식은 모든 API 호출에
+                  동일한 로직을 적용할 수 있지만, 특정 요청에 대한 로직을
+                  변경하려면 매번 추가적인 코드 수정이 필요했습니다.
+                </p>
+                <br />
+                <p>
+                  프로젝트의 확장성과 유연성을 고려하여, 최종적으로 특정 Axios
+                  인스턴스에만 Interceptor를 적용하는 방식을 선택해서
+                  구현했습니다. 결과적으로, Axios의 Interceptor를 통해 인증
+                  토큰과 리프레시 토큰의 유효성을 체크하는 로직을 구현하면서,
+                  코드의 중복을 크게 줄일 수 있었습니다.
+                </p>
+              </>
+            }
+          />
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ function AppBanner() {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
+      // transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       style={{ backgroundImage: "url('/images/bgimg.jpg')" }}
       className="bg-cover bg-center w-[100%] h-[846px] mt-[112px]"
     >

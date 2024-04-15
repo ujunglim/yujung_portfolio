@@ -1,10 +1,8 @@
-import { AccordionDetails, AccordionSummary } from "@mui/material";
 import CategoryTitle from "./CategoryTitle";
+import CustomAccordion from "./CustomAccordion";
 import FengKong from "./FengKong";
 import ShaoXing from "./ShaoXing";
 import WorkDetail from "./WorkDetail";
-import Accordion from "@mui/material/Accordion";
-import { MdOutlineExpandMore } from "react-icons/md";
 
 function Work() {
   return (
@@ -22,42 +20,31 @@ function Work() {
         }}
       />
       <div className="w-[85%]">
-        <Accordion>
-          <AccordionSummary expandIcon={<MdOutlineExpandMore size={30} />}>
-            고객신용 분석 관리 서비스
-          </AccordionSummary>
-          <AccordionDetails>
-            <FengKong />
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary expandIcon={<MdOutlineExpandMore size={30} />}>
-            산업체인 분석 서비스
-          </AccordionSummary>
-          <AccordionDetails>
-            <ShaoXing />
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary expandIcon={<MdOutlineExpandMore size={30} />}>
-            사내 UI 보일러 템플릿 개발
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>
-              ● FengKong과 Admin 백오피스 개발 생산성을 위해 자주 사용되는
-              UI컴포넌트들을 Storybook을 사용하여 사내 UI보일러 템플릿 개발,
-              유지보수했습니다.
-            </p>
-            <p>
-              ● Button, Modal, Card, 스크롤 가능한 Popover, Ellipsis(줄임말)
-              Popover, 커스텀 Date Range Picker
-            </p>
-            <p>
-              ● 입력과 표 출력 기능을 가진 커스터마이징 가능한 Input group +
-              table 컴포넌트
-            </p>
-          </AccordionDetails>
-        </Accordion>
+        <CustomAccordion
+          title="고객신용 분석 관리 서비스"
+          content={<FengKong />}
+        />
+        <CustomAccordion title="산업체인 분석 서비스" content={<ShaoXing />} />
+        <CustomAccordion
+          title="사내 UI 보일러 템플릿 개발"
+          content={
+            <>
+              <p>
+                ● FengKong과 Admin 백오피스 개발 생산성을 위해 자주 사용되는
+                UI컴포넌트들을 Storybook을 사용하여 사내 UI보일러 템플릿을 개발,
+                유지보수했습니다.
+              </p>
+              <p>
+                ● Button, Modal, Card, 스크롤 가능한 Popover, Ellipsis(줄임말)
+                Popover, 커스텀 Date Range Picker
+              </p>
+              <p>
+                ● 입력과 표 출력 기능을 가진 커스터마이징 가능한 Input group +
+                table 컴포넌트
+              </p>
+            </>
+          }
+        />
       </div>
 
       <WorkDetail
