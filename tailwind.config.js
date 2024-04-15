@@ -12,10 +12,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: "#6366F1",
+        main: "#52A5FF",
+        submain: "#D5F4FF",
         // Light colors
         "primary-light": "#F7F8FC",
-        "secondary-light": "#FFFFFF",
+        white: "#FFFFFF",
         "ternary-light": "#f6f7f8",
 
         // Dark colors

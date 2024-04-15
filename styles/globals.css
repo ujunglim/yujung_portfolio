@@ -19,6 +19,19 @@ a {
   box-sizing: border-box;
 }
 
+.link {
+  color: theme(colors.main);
+  transition: all 200ms ease;
+}
+
+button {
+  outline: none;
+}
+
+.link:hover {
+  background-color: theme(colors.submain);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
