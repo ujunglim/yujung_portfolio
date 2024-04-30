@@ -23,7 +23,7 @@ function AppBanner() {
       animate={{ opacity: 1 }}
       // transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       style={{ backgroundImage: "url('/images/bgimg.jpg')" }}
-      className="bg-cover bg-center w-[100%] sm:h-[846px] h-[500px] mt-[112px]"
+      className="bg-cover bg-center w-[100%] sm:h-[846px] h-[300px] mt-[112px]"
     >
       <div className="relative top-[15%] sm:left-[10%]">
         <div>

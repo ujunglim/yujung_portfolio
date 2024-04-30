@@ -13,7 +13,7 @@ const data = {
   },
   imgs: [{ src: "/images/FitHub/0.png", caption: "메인 페이지" }],
   info: {
-    link: "https://fithub-front-z7s1.vercel.app/",
+    link: "https://fithub-front-rho.vercel.app/",
     github: "https://github.com/team-Fithub/fithub-front",
     intro: [
       "헬스 커뮤니티 플랫폼으로, 회원과 트레이너가 정보를 공유하고 소통할 수 있는 공간을 제공합니다.",
