@@ -24,6 +24,7 @@ const data = {
   info: {
     link: "https://ujung.link",
     github: "https://github.com/ujunglim/TubePicker",
+    youtube: "https://www.youtube.com/watch?v=yKzTSRPNPns&t=10s",
     intro: [
       "사용자가 원하는 유튜브 채널을 그룹핑하여 볼 수 있는 서비스입니다.",
       "유튜브의 추천영상기능 때문에 발생하는 시간낭비를 줄이고, 제가 관심있는 채널만 모아 보고 싶어 만들게 됐습니다.",
@@ -43,7 +44,8 @@ const data = {
       "axios",
     ],
     works: [
-      "Google OAuth2.0 로그인 및 Route53 도메인 AWS EC2에 배포",
+      "React, Redux, Typescript, Axios, SCSS로 클라이언트를 제작",
+      "사용자 경험을 향상시키기 위해 페이지를 다시 로드할 때 Redux-persist를 사용해 이전 상태를 local storage에 저장",
       "Axios의 interceptor를 이용해 모든 API 요청에 앞서 JWT Access Token과 Refresh Token의 유효성을 확인하고 서버 응답 값에 따라 분기 처리하도록 구현하여 코드 중복 제거",
       "사용자와 폴더 데이터를 MySQL에 저장 및 dBeaver로 관리",
       "YouTube API를 이용해 사용자의 구독채널, 좋아한 영상 리스트 등 출력",
@@ -98,7 +100,11 @@ function TubePicker() {
       {/* Info */}
       <div>
         {/* 링크, 깃헙 */}
-        <LinkGroup github={data.info.github} website={data.info.link} />
+        <LinkGroup
+          github={data.info.github}
+          website={data.info.link}
+          youtube={data.info.youtube}
+        />
 
         <div className="dark:text-ternary-light text-md text-gray-600">
           <div className="mb-5"></div>

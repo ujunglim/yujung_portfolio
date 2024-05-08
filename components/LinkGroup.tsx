@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaYoutube } from "react-icons/fa";
 import { IoIosLink } from "react-icons/io";
 import { IoKey } from "react-icons/io5";
 
@@ -7,9 +7,10 @@ interface Props {
   github?: string;
   website?: string;
   login?: string[];
+  youtube?: string;
 }
 
-const LinkGroup: FC<Props> = ({ github, website, login }) => {
+const LinkGroup: FC<Props> = ({ github, website, login, youtube }) => {
   const openPage = (url: string) => {
     window.open(url, "_blank");
   };
@@ -37,6 +38,14 @@ const LinkGroup: FC<Props> = ({ github, website, login }) => {
           <IoKey style={{ marginRight: "10px" }} />
           {`아이디: ${login[0]} 비번: ${login[1]}`}
         </div>
+      )}
+      {youtube && (
+        <button
+          onClick={() => openPage(youtube)}
+          className="bg-gray-100 p-2 rounded-md hover:bg-gray-200 transition duration-200 text-2xl"
+        >
+          <FaYoutube />
+        </button>
       )}
     </div>
   );
